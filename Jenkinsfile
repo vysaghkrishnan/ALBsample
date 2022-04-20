@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Checkout') {
             steps {
-            checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'gitHUB', url: 'git@github.com:vysaghkrishnan/ALBsample.git']]])
+            checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'gitHUB', url: 'https://github.com/vysaghkrishnan/ALBsample.git']]])
             }
         }
         stage ('Docker Build') {
