@@ -21,7 +21,8 @@ pipeline {
             steps {
                 script {
                     sh 'aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/j6w0n6r7'
-                    sh 'docker push public.ecr.aws/j6w0n6r7/public.ecr.aws/dockerlb:latest'
+                    sh 'docker tag public.ecr.aws/dockerlb:latest public.ecr.aws/j6w0n6r7/public.ecr.aws/dockerlb:latest'
+		    sh 'docker push public.ecr.aws/j6w0n6r7/public.ecr.aws/dockerlb:latest'
                 }
            }
         }
